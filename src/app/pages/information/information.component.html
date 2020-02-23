@@ -21,28 +21,24 @@
                           <thead>
                             <tr>
                               <th class="text-center">Date </th>
-                              <th class="text-center"> Sujet</th>
                               <th class="text-center"> Titre</th>
-                              <th class="text-center"> Annonceur</th>
+                              <th class="text-center"> Contenu</th>
                               <th class="text-center"> Urgence</th>
                             </tr>
                           </thead>
                           <tbody>
-                            <tr >
+                            <tr *ngFor=" let a of annonces">
                               <td class="text-center">
-                               Test
+                               {{a.date|date}}
                               </td>
                               <td class="text-center">
-                                Test
+                                {{a.title}}
                                </td>
                                <td class="text-center">
-                                Test
+                                {{a.contenu}}
                                </td>
                                <td class="text-center">
-                                Test
-                               </td>
-                               <td class="text-center">
-                                Test
+                                {{a.urgence}}
                                </td>
                             </tr>
                           </tbody>

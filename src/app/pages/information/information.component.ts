@@ -1,3 +1,4 @@
+import { AnnonceService } from './../../services/annonce.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InformationComponent implements OnInit {
 
-  constructor() { }
+  annonces;
+  constructor(private annonceService: AnnonceService) {
+    this.getAllAnnonce();
+  }
 
   ngOnInit() {
+  }
+  getAllAnnonce() {
+    this.annonceService.getAllAnnonces().subscribe(
+      data => {
+        this.annonces = data;
+      },
+      err => {
+        console.log(err);
+      }
+    );
   }
 
 }

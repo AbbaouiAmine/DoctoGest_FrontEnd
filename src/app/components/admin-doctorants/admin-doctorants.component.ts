@@ -9,6 +9,8 @@ import { Component, OnInit } from '@angular/core';
 export class AdminDoctorantsComponent implements OnInit {
 
   mode = 'list';
+  pageOfItems: Array<any>;
+  editdoctorant;
   constructor(private auth: AuthenticationService) {
     this.getAllUsers();
   }
@@ -16,6 +18,20 @@ export class AdminDoctorantsComponent implements OnInit {
   ngOnInit() {
 
   }
+  onEdit(d)
+  {
+    this.editdoctorant=d;
+    console.log(d);
+    this.mode='edit-doctorant';
+  }
+  onCancel()
+  {
+    this.mode='list';
+  }
+  onChangePage(pageOfItems: Array<any>) {
+    // update current page of items
+    this.pageOfItems = pageOfItems;
+}
   getAllUsers() {
     this.auth.getAllUsers()
       .subscribe(
@@ -29,8 +45,6 @@ export class AdminDoctorantsComponent implements OnInit {
       )
   }
   onNewDoctorant() {
-
-
     if (this.mode != 'new-doctorant') {
       this.mode = 'new-doctorant';
     } else {

@@ -1,9 +1,10 @@
+import { AdminAnnoncesComponent } from './components/admin-annonces/admin-annonces.component';
 import { InformationComponent } from './pages/information/information.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { NotfoundComponent } from './pages/notfound/notfound.component';
 import { AuthSideBarGuardsService } from './services/auth-sidebar-guards.service';
 import { AdminProfileComponent } from './components/admin-profile/admin-profile.component';
-import { AdminStatisticComponent } from './components/admin-statistic/admin-statistic.component';
+import { AdminMessageComponent } from './components/admin-message/admin-message.component';
 import { AdminDoctorantsComponent } from './components/admin-doctorants/admin-doctorants.component';
 import { AdminLayoutComponent } from './pages/admin-layout/admin-layout.component';
 import { LoginComponent } from './pages/login/login.component';
@@ -20,12 +21,13 @@ const routes: Routes = [
   {
     path: 'menu', canActivate: [AuthGuardsService], component: AdminLayoutComponent, children: [
       { path: 'doctorants', canActivate: [AuthSideBarGuardsService], component: AdminDoctorantsComponent },
-      { path: 'statistic', component: AdminStatisticComponent },
-      { path: 'profile', component: AdminProfileComponent }
+      { path: 'message', component: AdminMessageComponent },
+      { path: 'profile', component: AdminProfileComponent },
+      { path: 'annonce', component: AdminAnnoncesComponent }
     ]
   },
   { path: 'contact', component: ContactComponent },
-  { path: 'information', component: InformationComponent },
+  { path: 'annonce', component: InformationComponent },
   { path: 'notfound', component: NotfoundComponent },
   { path: '**', redirectTo: 'notfound' }
 ];

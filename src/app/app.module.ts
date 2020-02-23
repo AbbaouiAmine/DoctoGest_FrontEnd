@@ -1,8 +1,10 @@
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { NotfoundComponent } from './pages/notfound/notfound.component';
 import { AuthGuardsService } from './services/auth-guards.service';
 import { AuthenticationService } from './services/authentication.service';
 import { AdminLayoutComponent } from './pages/admin-layout/admin-layout.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
@@ -19,10 +21,12 @@ import * as $ from 'jquery';
 import { MenubarComponent } from './components/menubar/menubar.component';
 import { AdminDoctorantsComponent } from './components/admin-doctorants/admin-doctorants.component';
 import { AdminProfileComponent } from './components/admin-profile/admin-profile.component';
-import { AdminStatisticComponent } from './components/admin-statistic/admin-statistic.component';
+import { AdminMessageComponent } from './components/admin-message/admin-message.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { InformationComponent } from './pages/information/information.component';
 import { AdminAnnoncesComponent } from './components/admin-annonces/admin-annonces.component';
+import { JwPaginationComponent } from 'jw-angular-pagination';
+import { AnnoncedetailComponent } from './components/annoncedetail/annoncedetail.component';
 
 @NgModule({
   declarations: [
@@ -36,17 +40,19 @@ import { AdminAnnoncesComponent } from './components/admin-annonces/admin-annonc
     MenubarComponent,
     AdminDoctorantsComponent,
     AdminProfileComponent,
-    AdminStatisticComponent,
+    AdminMessageComponent,
     ContactComponent,
     InformationComponent,
     AdminAnnoncesComponent,
-
+    JwPaginationComponent,
+    AnnoncedetailComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgbModule
   ],
   providers: [AuthenticationService, AuthGuardsService],
   bootstrap: [AppComponent]

@@ -10,11 +10,9 @@
   // Modal header
   // Top section of the modal w/ title and dismiss
   .modal-header {
-    border-bottom: none;
-    padding-top:    24px;
-    padding-right:  24px;
+    border-bottom: 1px 0.1px;
     padding-bottom: 0;
-    padding-left:   24px;
+    padding-top: 0px;
 
     & button{
         position: absolute;
@@ -38,7 +36,8 @@
   }
   // Footer (for actions)
   .modal-footer {
-    border-top: none;
+    padding-top : 10px !important;
+    border-top: solid -0.1px;
     padding-right: 24px;
     padding-bottom: 16px;
     padding-left: 24px;
